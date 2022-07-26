@@ -34,7 +34,8 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositori
 	php7-ctype \
 	php7-session  \
 	php7-zlib && \
-   	\ 
+   	\
+	rm /var/cache/apk/* && \ 
 	rm /etc/localtime && \
 	ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
 	ln -sf /dev/stdout /var/log/apache2/access.log && \
