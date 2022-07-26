@@ -52,7 +52,8 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositori
 	sed -i 's/;date.timezone =/date.timezone = America\/Sao_Paulo/g' /etc/php7/php.ini && \
 	sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 2048M/g' /etc/php7/php.ini && \
 	sed -i 's/post_max_size = 8M/post_max_size = 1024M/g' /etc/php7/php.ini && \
-	echo 'AddDefaultCharset utf-8' >> /etc/apache2/httpd.conf
+	echo 'AddDefaultCharset utf-8' >> /etc/apache2/httpd.conf && \
+	mkdir /run/apache2
 
 WORKDIR /root
 EXPOSE 80
