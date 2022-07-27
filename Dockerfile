@@ -33,6 +33,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositori
 	php7-curl \
 	php7-ctype \
 	php7-session  \
+	php7-mbstring  \
 	php7-zlib && \
    	\
 	rm /var/cache/apk/* && \ 
