@@ -10,8 +10,6 @@ Esse projeto contém um webserver leve e robusto para para rodar as aplicações
 	    -p 80:80 \
 	--restart=always aprendendolinux/lamp-scriptcase9:tag
 
-Caso prefira, você pode usar o Docker Composer com o arquivo [docker-compose.yml](https://github.com/AprendendoLinux/lamp-scriptcase9/blob/main/docker-compose.yml).
-
 Se tiver qualquer dúvida, acesse meu site:
 
 [https://www.henrique.tec.br](https://www.henrique.tec.br)
