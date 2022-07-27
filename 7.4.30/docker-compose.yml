@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   lamp-scriptcase9:
-    image: aprendendolinux/lamp-scriptcase9:7.4.28
+    image: aprendendolinux/lamp-scriptcase9:7.4.30
     restart: always
     container_name: lamp-scriptcase9
     volumes:
