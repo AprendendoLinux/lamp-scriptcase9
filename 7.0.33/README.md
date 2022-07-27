@@ -8,7 +8,7 @@ Esse projeto contém um webserver leve e robusto para para rodar as aplicações
 	    --hostname='lamp-scriptcase' \
 	    -v lamp-scriptcase:/var/www/html \
 	    -p 80:80 \
-	--restart=always aprendendolinux/lamp-scriptcase9
+	--restart=always aprendendolinux/lamp-scriptcase9:7.0.33
 
 Caso prefira, você pode usar o Docker Composer com o arquivo [docker-compose.yml](https://github.com/AprendendoLinux/lamp-scriptcase9/blob/main/7.0.33/docker-compose.yml).
 
