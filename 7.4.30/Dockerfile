@@ -3,7 +3,9 @@ MAINTAINER Henrique Fagundes <henrique@henrique.tec.br>
 
 ADD https://php.hernandev.com/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 RUN echo "https://php.hernandev.com/v3.12/php-7.4" >> /etc/apk/repositories && \
-	apk update && apk upgrade && apk add --update tzdata apache2 fcgi fontconfig libxrender libxext \
+	echo 'https://dl-cdn.alpinelinux.org/alpine/v3.14/community' >> /etc/apk/repositories && \
+	echo 'https://dl-cdn.alpinelinux.org/alpine/v3.14/main' >> /etc/apk/repositories && \
+	apk update && apk upgrade && apk add --update bash-completion tzdata apache2 fcgi fontconfig libxrender libxext libc6-compat wkhtmltopdf \
 	\
 	php7-apache2 \
 	php7-mcrypt \
@@ -52,10 +54,11 @@ RUN echo "https://php.hernandev.com/v3.12/php-7.4" >> /etc/apk/repositories && \
 	sed -i 's/;date.timezone =/date.timezone = America\/Sao_Paulo/g' /etc/php7/php.ini && \
 	sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 2048M/g' /etc/php7/php.ini && \
 	sed -i 's/post_max_size = 8M/post_max_size = 1024M/g' /etc/php7/php.ini && \
-	echo 'AddDefaultCharset utf-8' >> /etc/apache2/httpd.conf
-	#mkdir /run/apache2
+	echo 'AddDefaultCharset utf-8' >> /etc/apache2/httpd.conf && sed -i "s/ash/bash/g" /etc/passwd && \
+	cp /lib64/ld-linux-x86-64.so.2 /lib/
+	
+COPY .bashrc /root/
 
 WORKDIR /root
 EXPOSE 80
 CMD ["httpd", "-D", "FOREGROUND"]
-
