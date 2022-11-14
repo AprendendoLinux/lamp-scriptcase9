@@ -3,7 +3,7 @@ MAINTAINER Henrique Fagundes <henrique@henrique.tec.br>
 
 ADD https://php.hernandev.com/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 RUN echo "https://php.hernandev.com/v3.12/php-7.4" >> /etc/apk/repositories && \
-	apk update && apk upgrade && apk add --update tzdata apache2 fcgi \
+	apk update && apk upgrade && apk add --update tzdata apache2 fcgi fontconfig libxrender libxext \
 	\
 	php7-apache2 \
 	php7-mcrypt \
